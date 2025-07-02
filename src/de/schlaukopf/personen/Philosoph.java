@@ -2,6 +2,8 @@ package de.schlaukopf.personen;
 
 import de.schlaukopf.organisation.Schlaukopf;
 
+import java.util.Random;
+
 /**
  * <pre>
  *     Ein Philosoph ist ein schlauer Kopf : implementiert das Schlaukopf Interface
@@ -12,5 +14,17 @@ import de.schlaukopf.organisation.Schlaukopf;
  * </pre>
  */
 public abstract class Philosoph implements Schlaukopf {
+    /**
+     * objekt-Attribut, in einem Interface nicht möglich
+     */
+    protected int jahreInEinsamkeit;
+    /**
+     * Nur Klassen haben Konstruktoren, in einem Interface nicht möglich
+     * Wird in dern erbenden Klasse aufgerufen (implizit, oder explizit mit super();
+     */
+    public Philosoph(){
+        Random wuerfel = new Random();
+        jahreInEinsamkeit = wuerfel.nextInt(2, 25);
+    }
 
 }
