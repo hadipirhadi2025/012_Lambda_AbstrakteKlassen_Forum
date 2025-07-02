@@ -31,5 +31,13 @@ public interface Schlaukopf {
 
     /**
      * Was ist mit denken?
+     * Konkrete Methoden haben einen Körper: {...}
+     * Eine Methode im Interface kann konkret sein, wenn das Schlüselwort default verwendet wird.
+     * Diese Methode kann überschrieben werden. muss sie aber nicht
+     * Im Lambda Ausdruck wird sie nicht überschreiben.
      */
+    //void denken();
+    default void denken(){
+        System.out.println("ICH HAB RECHT!");
+    }
 }
