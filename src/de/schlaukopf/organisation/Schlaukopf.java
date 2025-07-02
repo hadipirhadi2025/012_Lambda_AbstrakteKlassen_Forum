@@ -24,7 +24,7 @@ public interface Schlaukopf {
      * jedes Objekt , das dieses Interface implementiert hat, erstellt seine eigene Information, die
      * dann die zurückgegeben werden
      * Für Lambda-Syntax: Eine Methode ohne Parameter, mit Rückgabe
-     *
+     * Diese Methode MUSS überschreiben werden, auch im Lamda Ausdruck
      * @return das, was der schlaue Kopf zu sagen hat.
      */
     String redern();
@@ -32,7 +32,7 @@ public interface Schlaukopf {
     /**
      * Was ist mit denken?
      * Konkrete Methoden haben einen Körper: {...}
-     * Eine Methode im Interface kann konkret sein, wenn das Schlüselwort default verwendet wird.
+     * Eine Methode im Interface kann konkret sein, wenn das Schlüsselwort default verwendet wird.
      * Diese Methode kann überschrieben werden. muss sie aber nicht
      * Im Lambda Ausdruck wird sie nicht überschreiben.
      */
