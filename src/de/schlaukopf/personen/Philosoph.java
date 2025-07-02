@@ -11,6 +11,14 @@ import java.util.Random;
  *         die reden Methode soll hier gar nicht überschreiben werden.
  *     Erbende Klassen, Erweiterungen von philosoph soll ihre eigenen reden-Methode habe: Lösung: abstrakte Klasse
  *     Damit kann die Klasse Philosoph nict instanziert werden, kein new Philosoph();
+ *
+ *     Abstrakte Klassen dürfen konkrete Methoden enthalten: schlafen, trinken, denken
+ *     Abstrakte Klassen dürfen abstrakte Methone enthalten: rauchen, reden
+ *     Abstrakte Klassen dürfen finale Methoden enthalten: schlafen
+ *     Abstrake Klassen dürfen Objekt-Attriebut enthalten: Jahre
+ *                      haben(mindestens) einen Konstruktor (Explizit oder implizit)
+ *                       können nicht instantiate werden(kein new Philosoph();)
+ *                       können beerbt/erweitert werden: extends Philosoph{}
  * </pre>
  */
 public abstract class Philosoph implements Schlaukopf {
@@ -25,6 +33,21 @@ public abstract class Philosoph implements Schlaukopf {
     public Philosoph(){
         Random wuerfel = new Random();
         jahreInEinsamkeit = wuerfel.nextInt(2, 25);
+    }
+
+    public void trinken(){
+        System.out.println("Am liebsten trinke ich Rotwein.");
+    }
+    /**
+     * Nur abstrakte Klassen können abstrakte Methoden enthalten.
+     * soll
+     */
+
+    public abstract void rauchen();
+    public final void schlaufen(){
+        String wissen = redern();
+        System.out.println("Seit " + jahreInEinsamkeit + " schlafe ich nicht mehr, denn " +
+                "ich weiß: " + wissen);
     }
 
 }
