@@ -74,7 +74,7 @@ public class SchlaukopfForumStarter {
             }
 
             public String berechnen(){
-                return "Lichtgeschwindigkeit: 299.792.458 m/s"
+                return "Lichtgeschwindigkeit: 299.792.458 m/s";
             }
             //Wunsch: berechnen aufrufen DAS IST NICHT MÖGLICH, die Klasse hat keinen Referenztyp!
         };

@@ -1,6 +1,7 @@
 package de.schlaukopf.uebung.metropolis.organisation;
 
 import de.schlaukopf.uebung.metropolis.exceptions.CapeVergessenException;
+import de.schlaukopf.uebung.metropolis.exceptions.FederkleidNichtPerfektException;
 import de.schlaukopf.uebung.metropolis.exceptions.NichtVollGetanktException;
 import de.schlaukopf.uebung.metropolis.interfaces.Flieger;
 import de.schlaukopf.uebung.metropolis.klassen.Batwing;
@@ -26,6 +27,8 @@ public class MetropolisAirport {
                 flieger.starten(); // اینجا ممکن است Exception پرتاب شود
             } catch (CapeVergessenException | NichtVollGetanktException e) {
                 System.err.println("[FEHLER] Start von " + flieger.getClass().getSimpleName() + ": " + e.getMessage());
+            } catch (FederkleidNichtPerfektException e) {
+                throw new RuntimeException(e);
             }
             // ... اضافه کردن catch برای FederkleidNichtPerfektException در گام بعدی
             System.out.println(flieger.getClass().getSimpleName() + " ist bereit zu landen."); // نشان می‌دهد که اگر شروع موفق بود چه اتفاقی می‌افتد
@@ -39,6 +42,8 @@ public class MetropolisAirport {
             } catch (CapeVergessenException | NichtVollGetanktException e) {
                 System.err.println("Startfehler: " + e.getMessage());
                 // cann log here
+            } catch (FederkleidNichtPerfektException e) {
+                throw new RuntimeException(e);
             }
             // if not throw then can landen
             // البته، این منطق ممکن است پیچیده‌تر شود اگر هر Flieger Exception خاص خود را داشته باشد
