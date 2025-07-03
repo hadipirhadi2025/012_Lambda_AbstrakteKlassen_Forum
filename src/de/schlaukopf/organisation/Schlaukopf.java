@@ -3,41 +3,44 @@ package de.schlaukopf.organisation;
 /**
  * <pre>
  *     In einem Forum gibt es jede Menge schlauer Leute:
- *     Deshalb soll jeder, der sich im Schlaukopf Forum äußern möchte, diese Interface Implementieren.
+ *     Deshalb soll jeder, der sich im Schlaukopf Forum äußern möchte, diese Interfacde
+ *     implementieren.
  *
- *     Diese Projekt hat den Schwerpunkt: Lamba Ausdrücke, deshalb soll dieses Interface als
- *     Lambda Ausdruck instantiate werden können.
+ *     Dieses Projekt hat den Schwerpunkt: Lambda Ausdrücke, deshalb soll dieses Interface als
+ *     Lambda Ausdruck instanziiert werden können.
  *
- *     Lambda: genau eine abstrakte Methode: Funktionales Interface
+ *     Lambda: genau eine abstrakte Methode : Funktionales Interface.
  *
- *     Funktionale Interface: Annotation @FunktionalInterface
+ *     Funktionale Imterface: Annotation @FunctionalInterface
  *
- *     Schlaukopf schlaubi = ...;
- *     schlaubi.reden(); schlaubi.getclass(), schlaubi.tostring, .... *
+ *     Schlaukopf schlaubi = .....;
+ *     schlaubi.reden(); schlaubi.getClass(), schlaubi.toString,...
  *     Wunsch: schlaubi.denken();
  * </pre>
  */
+@FunctionalInterface
 public interface Schlaukopf {
     /**
-     * Ein schlauer Kopf hat wichtiges u sagen.
-     * Das ist die Rückgaebe dieser Methode
-     * jedes Objekt , das dieses Interface implementiert hat, erstellt seine eigene Information, die
-     * dann die zurückgegeben werden
+     * Ein schlauer Kopf hat wichtiges zu sagen.
+     * Das ist die Rückgabe dieser Methode
+     * Jedes Objekt, das dieses Interface implementiert hat, erstellt seine eigenen Information die
+     * dann hier zurück gegeben werden
      * Für Lambda-Syntax: Eine Methode ohne Parameter, mit Rückgabe
-     * Diese Methode MUSS überschreiben werden, auch im Lamda Ausdruck
+     * Diese Methode MUSS überschrieben werden, auch im Lambda Ausdruck
      * @return das, was der schlaue Kopf zu sagen hat.
      */
-    String redern();
+    String reden();
+
 
     /**
      * Was ist mit denken?
-     * Konkrete Methoden haben einen Körper: {...}
+     * Konkrete Methoden habn einen Körper: {....}
      * Eine Methode im Interface kann konkret sein, wenn das Schlüsselwort default verwendet wird.
-     * Diese Methode kann überschrieben werden. muss sie aber nicht
-     * Im Lambda Ausdruck wird sie nicht überschreiben.
+     * Diese Methode kann überschrieben werden, muss sie aber nicht
+     * Im Lambda Ausdruck wird sie nicht überschrieben.
      */
-    //void denken();
     default void denken(){
         System.out.println("ICH HAB RECHT!");
     }
+
 }
