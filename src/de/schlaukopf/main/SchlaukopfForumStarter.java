@@ -59,6 +59,39 @@ public class SchlaukopfForumStarter {
         System.out.println(justus.visitwnkartenVerteilen());
         dasForum.aufnehmen(justus, "Der erste Detektiv");
 
-        // *** Schlaukpf:
+        // *** Schlaukpf: anonyme Klasse, die das Schlaukopf Interface implementiert .... implements Schlaukopf ****//
+        Schlaukopf einstein = new Schlaukopf() {
+            @Override
+            public String redern() {
+                String wichriges = berechnen();
+                return "E = mc²  " + wichriges;
+            }
+
+            @Override
+            public void denken() {
+                //Schlaukopf.super.denken();
+                System.out.println("Alles ist relativ");
+            }
+
+            public String berechnen(){
+                return "Lichtgeschwindigkeit: 299.792.458 m/s"
+            }
+            //Wunsch: berechnen aufrufen DAS IST NICHT MÖGLICH, die Klasse hat keinen Referenztyp!
+        };
+        dasForum.aufnehmen(einstein, "Einstein");
+
+        // **** Eine Lambda Ausdruck: Impelmentieren der reden-Methode (mit Rückgabe) *****///
+        Schlaukopf influencer = () -> "100 Likes sind mehr wert, als ein Nobelpreis! #Weisheit";
+        dasForum.aufnehmen(influencer, "Clickbait Charlie");
+
+        Schlaukopf schlaubiSchlumpf = () ->{
+            String teatigkeit = "Schlumpfe";
+            return "Ich " + teatigkeit + " also " + teatigkeit + " ich.";
+
+        };
+        dasForum.aufnehmen(schlaubiSchlumpf, "Schlaubi, der klügste Schlaumpg von allen");
+
+        // *** Aufnehmen eines Schlaukopfs als anonymes Objekt, das über Lambda Ausdruck erstellt ist ***//
+        dasForum.aufnehmen(()->"C# ist eine Strafe! ", "Java Guru");
     }
 }
