@@ -95,5 +95,6 @@ public class SchlaukopfForumStarter {
         dasForum.aufnehmen(()->"C# ist eine Strafe! ", "Java Guru");
 
         dasForum.alleDiskutieren();
+        dasForum.alleDenken();
     }
 }
