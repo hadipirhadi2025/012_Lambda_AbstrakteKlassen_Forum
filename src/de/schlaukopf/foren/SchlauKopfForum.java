@@ -21,7 +21,7 @@ public class SchlauKopfForum {
      */
     private Map<Schlaukopf, String> schlaueKopfe = new HashMap<>();
 
-    private void aufnehmen(Schlaukopf schlauKopf, String nick){
+    public void aufnehmen(Schlaukopf schlauKopf, String nick){
         schlaueKopfe.put(schlauKopf, nick);
         System.out.println(nick + ", ein schlauer Kopf betritt das Forum");
     }
