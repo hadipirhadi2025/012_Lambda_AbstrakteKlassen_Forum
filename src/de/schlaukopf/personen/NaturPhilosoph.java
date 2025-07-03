@@ -17,7 +17,8 @@ public class NaturPhilosoph extends Philosoph{
     }
 
     /**
-     *
+     * Abstrakt Methode aus der Philosoph
+     * Muss überschreiben werden.
      */
     @Override
     public void rauchen() {
@@ -35,8 +36,21 @@ public class NaturPhilosoph extends Philosoph{
         return wissen;
     }
 
-    @Override
-    public void denken() {
-        super.denken();
+//    /**
+//     * Konkrete Methode aus dem Interface Schlaukopf (dort default)
+//     */
+//    @Override
+//    public void denken() {
+//        super.denken();
+//        System.out.println("Äpfel .. übeerall Äpfel...");
+//    }
+
+    /**
+     * Nur ein Naturphilosoph kann beobachten
+     * Nur der Referenztyp kann diese Methode beauftragen
+     */
+    public void beobachten(){
+        System.out.println("Warten auf die reifen Äpfel....");
+        jahreInEinsamkeit++;
     }
 }
