@@ -93,5 +93,7 @@ public class SchlaukopfForumStarter {
 
         // *** Aufnehmen eines Schlaukopfs als anonymes Objekt, das über Lambda Ausdruck erstellt ist ***//
         dasForum.aufnehmen(()->"C# ist eine Strafe! ", "Java Guru");
+
+        dasForum.alleDiskutieren();
     }
 }
