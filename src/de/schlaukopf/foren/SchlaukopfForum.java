@@ -1,11 +1,8 @@
 package de.schlaukopf.foren;
 
 import de.schlaukopf.organisation.Schlaukopf;
-import de.schlaukopf.personen.Philosoph;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
